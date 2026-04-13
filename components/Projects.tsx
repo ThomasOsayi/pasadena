@@ -62,7 +62,7 @@ export default function Projects() {
             </h2>
           </div>
           <Link
-            href="#"
+            href="/portfolio"
             className="inline-flex items-center gap-2.5 px-[22px] py-[13px] text-[12.5px] font-semibold tracking-[0.1em] uppercase bg-transparent text-cream border border-cream/40 hover:bg-cream hover:text-burgundy-deep hover:border-cream transition-all duration-250 self-start"
           >
             View Full Portfolio
