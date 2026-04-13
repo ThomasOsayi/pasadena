@@ -4,12 +4,12 @@ import { useState } from "react";
 import Link from "next/link";
 
 const navLinks = [
-  { href: "#home", label: "Home" },
-  { href: "#about", label: "About" },
-  { href: "#services", label: "Services" },
-  { href: "#projects", label: "Portfolio" },
-  { href: "#clients", label: "Clients" },
-  { href: "#contact", label: "Contact" },
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/#services", label: "Services" },
+  { href: "/#projects", label: "Portfolio" },
+  { href: "/#clients", label: "Clients" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export default function Nav() {
@@ -55,7 +55,7 @@ export default function Nav() {
         {/* CTA button (desktop) */}
         <Link
           href="#contact"
-          className="hidden lg:inline-flex items-center gap-2.5 px-5 py-3 text-[12.5px] font-semibold tracking-[0.1em] uppercase bg-burgundy text-cream border border-burgundy hover:bg-burgundy-deep hover:border-burgundy-deep hover:-translate-y-px hover:shadow-md transition-all duration-250"
+          className="hidden lg:inline-flex items-center gap-2.5 px-5 py-3 text-[12.5px] font-semibold tracking-widest uppercase bg-burgundy text-cream border border-burgundy hover:bg-burgundy-deep hover:border-burgundy-deep hover:-translate-y-px hover:shadow-md transition-all duration-250"
         >
           Request Estimate
           <svg
@@ -111,7 +111,7 @@ export default function Nav() {
             <Link
               href="#contact"
               onClick={() => setMobileOpen(false)}
-              className="mt-4 inline-flex items-center justify-center gap-2.5 px-5 py-3.5 text-[12.5px] font-semibold tracking-[0.1em] uppercase bg-burgundy text-cream"
+              className="mt-4 inline-flex items-center justify-center gap-2.5 px-5 py-3.5 text-[12.5px] font-semibold tracking-widest uppercase bg-burgundy text-cream"
             >
               Request Estimate
               <svg
