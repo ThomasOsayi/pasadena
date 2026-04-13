@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand Colors */
+  --color-burgundy: #5e1a23;
+  --color-burgundy-deep: #3d0f16;
+  --color-burgundy-soft: #7a2832;
+  --color-cream: #f7f2ea;
+  --color-cream-warm: #efe6d6;
+  --color-paper: #fbf8f3;
+  --color-ink: #1a1614;
+  --color-ink-soft: #4a4340;
+  --color-ink-muted: #87807c;
+  --color-brass: #b8893d;
+  --color-brass-light: #d4a857;
+
+  /* Border / Line Colors */
+  --color-line: rgba(26, 22, 20, 0.12);
+  --color-line-soft: rgba(26, 22, 20, 0.06);
+
+  /* Fonts (wired to next/font variables from layout.tsx) */
+  --font-display: var(--font-fraunces);
+  --font-sans: var(--font-manrope);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(26, 22, 20, 0.06), 0 1px 2px rgba(26, 22, 20, 0.04);
+  --shadow-md: 0 10px 30px -10px rgba(26, 22, 20, 0.18);
+  --shadow-lg: 0 30px 60px -20px rgba(26, 22, 20, 0.28);
+
+  /* Container */
+  --container-site: 1280px;
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans), sans-serif;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
+  overflow-x: hidden;
+}
+
+/* ============================================
+   REUSABLE UTILITY CLASSES
+   ============================================ */
+
+/* Display font helper for serif headings */
+.font-display {
+  font-family: var(--font-display), serif;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+/* Eyebrow label (small uppercase tag above headings) */
+.eyebrow {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-burgundy);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: var(--color-burgundy);
+}
+
+.eyebrow-centered {
+  justify-content: center;
+}
+
+.eyebrow-centered::after {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: var(--color-burgundy);
+}
+
+.eyebrow-light {
+  color: var(--color-brass-light);
+}
+
+.eyebrow-light::before,
+.eyebrow-light::after {
+  background: var(--color-brass-light);
+}
+
+/* Site container */
+.container-site {
+  max-width: var(--container-site);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+@media (max-width: 640px) {
+  .container-site {
+    padding: 0 20px;
+  }
+}
