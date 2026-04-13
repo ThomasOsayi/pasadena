@@ -2,11 +2,12 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
-  { href: "/#services", label: "Services" },
+  { href: "/services", label: "Services" },
   { href: "/#projects", label: "Portfolio" },
   { href: "/#clients", label: "Clients" },
   { href: "/#contact", label: "Contact" },
@@ -14,6 +15,7 @@ const navLinks = [
 
 export default function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <nav className="bg-paper border-b border-line sticky top-0 z-50 backdrop-blur-md">
@@ -36,20 +38,23 @@ export default function Nav() {
 
         {/* Desktop nav links */}
         <div className="hidden lg:flex gap-9 items-center">
-          {navLinks.map((link, i) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={`text-[13.5px] font-medium tracking-wide py-2 relative transition-colors duration-200 hover:text-burgundy ${
-                i === 0 ? "text-burgundy" : "text-ink-soft"
-              }`}
-            >
-              {link.label}
-              {i === 0 && (
-                <span className="absolute left-0 right-0 bottom-0 h-[1.5px] bg-burgundy" />
-              )}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = link.href === pathname;
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`text-[13.5px] font-medium tracking-wide py-2 relative transition-colors duration-200 hover:text-burgundy ${
+                  isActive ? "text-burgundy" : "text-ink-soft"
+                }`}
+              >
+                {link.label}
+                {isActive && (
+                  <span className="absolute left-0 right-0 bottom-0 h-[1.5px] bg-burgundy" />
+                )}
+              </Link>
+            );
+          })}
         </div>
 
         {/* CTA button (desktop) */}
