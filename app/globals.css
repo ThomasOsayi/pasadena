@@ -132,3 +132,27 @@ body {
     font-size: 60px;
   }
 }
+
+/* ============================================
+   MARQUEE (infinite horizontal scroll)
+   Used on Clients page hero
+   ============================================ */
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee-scroll 60s linear infinite;
+  width: max-content;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
