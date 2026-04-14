@@ -92,11 +92,11 @@ export default function EstimateForm() {
   }
 
   return (
-    <section id="estimate" className="bg-paper pt-[100px] pb-24 lg:pb-32">
+    <section id="estimate" className="bg-paper pt-[120px] pb-24 lg:pb-32">
       <div className="container-site">
         <div className="relative grid lg:grid-cols-[1fr_1.5fr] border border-line min-h-[600px]">
           {/* "Primary Action" tab */}
-          <div className="absolute -top-3 left-12 bg-burgundy text-cream px-4 py-1.5 text-[10px] tracking-[0.16em] uppercase font-semibold">
+          <div className="absolute -top-3 left-12 z-10 bg-burgundy text-cream px-4 py-1.5 text-[10px] tracking-[0.16em] uppercase font-semibold">
             Primary Action
           </div>
 
